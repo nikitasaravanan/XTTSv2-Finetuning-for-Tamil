@@ -1,0 +1,46 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local environment settings
+.env
+.env.*
+!.env.example
+
+# macOS and IDE files
+.DS_Store
+.vscode/
+.idea/
+
+# Datasets and audio
+datasets-*/
+datasets/
+data/
+*.wav
+*.mp3
+*.flac
+*.ogg
+
+# Azure checkpoints and pretrained model files
+azure_checkpoints/
+checkpoints/
+tokenizer_files/
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+*.onnx
+
+# Training outputs and logs
+output/
+runs/
+logs/
+*.log
