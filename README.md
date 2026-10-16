@@ -25,8 +25,6 @@ Please refer to the upstream repositories for their original implementations, do
 ├── .gitignore                    
 ```
 
-The dataset and artifact directories are examples of the local working layout and should not be committed to Git.
-
 ## Requirements
 
 - Python 3.10
@@ -42,8 +40,8 @@ Training support depends on your hardware and the compatibility of the installed
 ### 1. Clone this repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
-cd <YOUR_REPOSITORY_DIRECTORY>
+git clone https://github.com/nikitasaravanan/XTTSv2-Finetuning-for-Tamil.git
+cd XTTSv2-Finetuning-for-Tamil
 ```
 
 Replace the placeholders with your actual GitHub URL and repository directory.
@@ -61,8 +59,8 @@ The upstream repository contains the `TTS/` source tree expected by the training
 For Conda:
 
 ```bash
-conda create -n xtts-vietnamese python=3.10
-conda activate xtts-vietnamese
+conda create -n xtts-tamil python=3.10
+conda activate xtts-tamil
 ```
 
 Install the dependencies:
@@ -114,9 +112,7 @@ Requirements:
 - Audio filenames in the metadata must include their actual file extensions.
 - Transcriptions should accurately match the recordings.
 - Training and evaluation files should contain separate examples.
-- Use `vi` as the language code for Vietnamese.
-
-Do not upload private, licensed, or otherwise restricted audio datasets without permission.
+- Use `ta` as the language code for Tamil.
 
 ## Training
 
@@ -127,7 +123,7 @@ Example command for a Mac:
 ```bash
 python train_gpt_xtts.py \
   --output_path checkpoints/ \
-  --metadatas datasets-1/metadata_train.csv,datasets-1/metadata_eval.csv,vi datasets-2/metadata_train.csv,datasets-2/metadata_eval.csv,vi \
+  --metadatas datasets-1/metadata_train.csv,datasets-1/metadata_eval.csv,vi datasets-2/metadata_train.csv,datasets-2/metadata_eval.csv,ta \
   --num_epochs 5 \
   --batch_size 8 \
   --grad_acumm 4 \
@@ -139,8 +135,6 @@ python train_gpt_xtts.py \
 ```
 
 Adjust dataset paths and training parameters to match your setup.
-
-The example above uses the arguments from the upstream training workflow. Confirm that they match your local script's argument parser before running.
 
 ### macOS notes
 
@@ -156,7 +150,7 @@ Use `extend_vocab_config.py` to extend the tokenizer vocabulary and prepare the 
 
 Check the script's command-line arguments and the upstream instructions for the required pretrained files, metadata paths, language code, and vocabulary size.
 
-Do not assume the original XTTS-v2 checkpoint already supports Vietnamese natively.
+Do not assume the original XTTS-v2 checkpoint already supports Tamil natively.
 
 ## Inference
 
